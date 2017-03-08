@@ -3,8 +3,8 @@
 Runs AWS CLI in an official python based docker image. Includes Groff to enable AWS CLI command line help.
 
 
-# Usage
-## Starting a container:
+## Usage
+### Starting a container:
 Run container mapped to host AWS CLI configuration:
 ```
 docker run -it --rm -v $HOME/.aws:/root/.aws cszubert/awscli-python bash
@@ -17,7 +17,7 @@ docker run -it --rm -e AWS_ACCESS_KEY_ID=<Access Key ID> -e AWS_SECRET_ACCESS_KE
 where \<Access Key ID> and \<Secret Access Key> are the AWS IAM User's access keys.
 
 
-##Example AWS CLI commands to run inside the container:
+### Example AWS CLI commands to run inside the container:
 Get help with AWS CLI
 ```
 aws help
@@ -44,7 +44,7 @@ Return information about instance in a specified region:
 aws ec2 describe-instances --region us-east-1
 ```
 
-# More Information
+## More Information
 
 AWS cli: <https://aws.amazon.com/cli/>
 
