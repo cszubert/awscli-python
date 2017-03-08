@@ -1,13 +1,11 @@
-FROM python:3.5.2
+FROM python
 
-# Install Pip and the AWS CLI
-# Prerequisites:
-#   pip
-#   python3
+# Install AWS CLI
 RUN pip install awscli --upgrade --user
 
-# Adding the AWS CLI Executable to your Command Line Path
+# Adding AWS CLI Executable to Path
 RUN echo 'export PATH=~/.local/bin:$PATH'>>root/.bashrc
 
-RUN apt-get update
-RUN apt-get --assume-yes install groff
+# Install groff to enable AWS CLI command line help
+RUN apt-get update \
+    && apt-get --assume-yes install groff
